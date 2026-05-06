@@ -158,14 +158,18 @@ fi
 #                        debug:    node --inspect src/index.js
 #
 # ── tmux keys (prefix = Ctrl+Space) ─────────────────────────────────
-#   prefix d             detach (session stays alive)
+#   Alt+1/2/3/4/5        switch window directly (no prefix needed)
+#   prefix e             jump to 'code' window  (editor)
+#   prefix u             jump to 'run' window
+#   prefix i             jump to 'ai' window
+#   prefix o             jump to 'term' window
+#   prefix n / p         next / previous window
 #   prefix s             session + window tree picker
 #   prefix ( / )         previous / next session
-#   prefix 1-4           jump to window by number
-#   prefix n / p         next / previous window
+#   prefix d             detach (session stays alive)
 #   prefix ,             rename window     prefix $   rename session
 #   prefix |             split right       prefix -   split down
-#   prefix h/j/k/l       move between panes (vim-style)
+#   prefix h/j/k/l       move between panes within a window (vim-style)
 #   prefix H/J/K/L       resize pane
 #   prefix T             add term-N window to current project
 #   prefix Enter         enter copy mode   y=copy  v=select  Esc=exit
