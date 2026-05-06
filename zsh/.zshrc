@@ -7,7 +7,6 @@ fi
 export EDITOR=nvim
 export VISUAL=nvim
 export PATH="$HOME/.local/bin:$PATH"
-stty -ixon 2>/dev/null || true   # free Ctrl+S for tmux prefix (disables XOFF flow control)
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 # ── 3. history ───────────────────────────────────────────────────────
@@ -158,7 +157,7 @@ fi
 #                        backend:  go run ./cmd/server
 #                        debug:    node --inspect src/index.js
 #
-# ── tmux keys (prefix = Ctrl+S) ──────────────────────────────────────
+# ── tmux keys (prefix = Ctrl+Space) ─────────────────────────────────
 #   prefix d             detach (session stays alive)
 #   prefix s             session + window tree picker
 #   prefix ( / )         previous / next session
