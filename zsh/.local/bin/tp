@@ -10,7 +10,7 @@ CODE_DIR="${CODE_DIR:-$HOME/Code}"
 _pick_dir() {
   find "$CODE_DIR" -mindepth 1 -maxdepth 1 -type d | sort | fzf \
     --prompt="project> " \
-    --preview="ls --color=always {}" \
+    --preview="eza --color=always {}" \
     --height=50% \
     --border=rounded
 }
