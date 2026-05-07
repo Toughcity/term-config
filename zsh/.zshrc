@@ -1,3 +1,10 @@
+# ── 0. pre-prompt output (must come before p10k instant prompt) ───────
+if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
+  _n=$(tmux ls 2>/dev/null | wc -l | tr -d ' ')
+  [[ "$_n" -gt 0 ]] && echo "  ${_n} tmux session(s) — run \`t\` to switch"
+  unset _n
+fi
+
 # ── 1. p10k instant prompt (must stay at top) ────────────────────────
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -73,16 +80,7 @@ _cfgsync() {
 # ── 9. p10k prompt ───────────────────────────────────────────────────
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# ── 10. tmux session hint (non-intrusive) ────────────────────────────
-if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
-  _n=$(tmux ls 2>/dev/null | wc -l | tr -d ' ')
-  if [[ "$_n" -gt 0 ]]; then
-    echo "  ${_n} tmux session(s) — run \`t\` to switch"
-  fi
-  unset _n
-fi
-
-# ── 11. cheatsheet (run `cheat` to print this) ───────────────────────
+# ── 10. cheatsheet (run `cheat` to print this) ───────────────────────
 # CHEATSHEET START — keep this marker so the `cheat` function can find it
 #
 # ── Navigation ───────────────────────────────────────────────────────
