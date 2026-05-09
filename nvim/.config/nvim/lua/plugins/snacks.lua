@@ -11,6 +11,9 @@ return {
         projects = {
           dev = { "~/Code", "~/Code-Safad" },
         },
+        explorer = {
+          exclude = { "*.uid" },
+        },
       },
     },
   },
