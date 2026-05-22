@@ -22,10 +22,12 @@ _current_layout() {
 }
 
 _pick_layout() {
+  # Hosted inside a tmux display-popup (see `bind L` in tmux.conf): let fzf
+  # run full-screen to fill the popup. Do NOT add --height — fzf's height
+  # mode misbehaves inside a popup and the picker flashes open then exits.
+  # The popup draws its own border, so --border is unnecessary too.
   printf 'windows\nide\n' | fzf \
     --prompt='target layout> ' \
-    --height=100% \
-    --border=rounded \
     --no-multi \
     --header='enter: switch to this layout (processes preserved)' \
     --preview-window='right:60%:wrap' \
