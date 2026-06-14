@@ -175,8 +175,7 @@ echo 'export MY_VAR=value' >> ~/.zshrc.local
 
 ```sh
 brew upgrade                 # latest CLI tools
-nvim +':Lazy sync' +qa       # latest nvim plugins (commits the lock refresh)
-git add nvim/.config/nvim/lazy-lock.json && git commit -m "chore: refresh nvim plugins"
+nvim +':Lazy sync' +qa       # latest nvim plugins, refreshes lazy-lock.json
 ```
 
 `lazy-lock.json` is committed so a fresh laptop reproduces *exactly* what works
@@ -186,26 +185,6 @@ today. `:Lazy sync` is how you pull upstream drift on your schedule.
 
 Add a line to `Brewfile` and re-run `./install.sh`. Keep project-specific tooling
 (databases, cloud SDKs, language SDKs) out of here — install those per project.
-
-## Generating the screenshots
-
-The fuzzy-finder screenshot is captured against a throwaway set of demo repos so
-no personal projects are shown:
-
-```sh
-# create demo project roots
-mkdir -p /tmp/demo-projects && cd /tmp/demo-projects
-for p in acme-api acme-web payments-service infra docs-site towmux playground; do
-  mkdir -p "$p" && git -C "$p" init -q
-done
-
-# point the picker at them and run it, then screenshot the fzf list
-CODE_DIRS="/tmp/demo-projects" tp
-```
-
-Save the capture as `assets/picker.png` and uncomment the image line in
-[The project workspace](#the-project-workspace) above. Remove `/tmp/demo-projects`
-when done.
 
 ## Credits
 
