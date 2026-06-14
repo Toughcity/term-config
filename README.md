@@ -1,8 +1,17 @@
-# term-config
+```
+████████╗ ██████╗ ██╗    ██╗███╗   ███╗██╗   ██╗██╗  ██╗
+╚══██╔══╝██╔═══██╗██║    ██║████╗ ████║██║   ██║╚██╗██╔╝
+   ██║   ██║   ██║██║ █╗ ██║██╔████╔██║██║   ██║ ╚███╔╝ 
+   ██║   ██║   ██║██║███╗██║██║╚██╔╝██║██║   ██║ ██╔██╗ 
+   ██║   ╚██████╔╝╚███╔███╔╝██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
+   ╚═╝    ╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+```
+
+# towmux
 
 **An efficient, low-overhead development environment for the age of AI agents.**
 
-term-config turns your terminal into a project workspace manager. Instead of
+towmux turns your terminal into a project workspace manager. Instead of
 running a separate heavyweight IDE — each with its own embedded terminal and its
 own AI assistant — for every repo you touch, you get **one terminal tab per
 project**, with everything that project needs grouped in one place: a
@@ -21,7 +30,7 @@ Modern AI-assisted development pushes you toward one IDE window per project, eac
 spawning its own editor process, language servers, integrated terminal, and AI
 panel. Five projects open means five of everything and a cluttered dock.
 
-term-config takes the opposite approach:
+towmux takes the opposite approach:
 
 - **One tab, one project.** A tmux session per repo holds the editor, the AI
   agent, and your terminals together — switch projects by switching sessions,
@@ -97,13 +106,13 @@ test:     go test ./...
 ## Bootstrap a new mac
 
 ```sh
-git clone <this-repo> ~/Code/term-config
-cd ~/Code/term-config
+git clone <this-repo> ~/Code/towmux
+cd ~/Code/towmux
 ./install.sh
 ```
 
 `install.sh` does **not** overwrite your `~/.zshrc` or tmux config. It appends a
-small managed block to each (marked with `# >>> term-config >>>`) that sources
+small managed block to each (marked with `# >>> towmux >>>`) that sources
 the repo files straight from this checkout and adds `zsh/.local/bin` to your
 `PATH`. Anything you already have in those files is preserved — delete the marked
 block to detach. Only the Neovim config (a complete config this repo owns) is
@@ -121,7 +130,7 @@ Powerline glyphs render.
 ## Uninstall
 
 ```sh
-cd ~/Code/term-config
+cd ~/Code/towmux
 ./uninstall.sh           # detach from your machine
 ./uninstall.sh --brew    # also uninstall the Brewfile packages
 ```
@@ -155,7 +164,7 @@ export DEV_DIRS="$HOME/Code:$HOME/Work"
 
 install.sh never touches your `~/.zshrc`, so machine-specific env vars can simply
 go there. If you'd rather keep them in a separate file — handy for secrets or for
-settings you don't want in a tracked dotfiles repo — `term-config.zsh` sources
+settings you don't want in a tracked dotfiles repo — `towmux.zsh` sources
 `~/.zshrc.local` if it exists:
 
 ```sh
@@ -186,7 +195,7 @@ no personal projects are shown:
 ```sh
 # create demo project roots
 mkdir -p /tmp/demo-projects && cd /tmp/demo-projects
-for p in acme-api acme-web payments-service infra docs-site term-config playground; do
+for p in acme-api acme-web payments-service infra docs-site towmux playground; do
   mkdir -p "$p" && git -C "$p" init -q
 done
 
