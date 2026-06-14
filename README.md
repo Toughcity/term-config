@@ -46,15 +46,17 @@ tp .         # use the current directory
 tp <path>    # use a specific path
 ```
 
-<!-- TODO: replace with the fuzzy-finder screenshot (see "Generating the screenshots" below) -->
-<!-- ![tp — fuzzy project picker](assets/picker.png) -->
+![tp — fuzzy project picker](assets/picker.png)
 
-When a session doesn't exist yet, `tp` asks which **layout** to use:
+When a session doesn't exist yet, `tp` asks which **layout** to use, with a live
+preview of each:
 
 | Layout | What you get |
 |--------|--------------|
 | **`ide`** | One window, three panes: Neovim (large, left), Claude (right), terminal (bottom) — the screenshot above. |
 | **`windows`** | Three separate windows — `code` (Neovim), `ai` (Claude), `term` — switch with `prefix + 1/2/3` or `prefix + e/i/o`. |
+
+![tp — layout picker with live preview](assets/layout.png)
 
 Set `TP_LAYOUT=ide` (or `windows`) to skip the prompt.
 
